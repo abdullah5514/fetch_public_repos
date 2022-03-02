@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-8 offset-sm-2">
+    <% if @repositories.any? %>
+        <h1>Public Repositeries</h1>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+          <% @repositories.each do |repository| %>
+            <div class="col">
+              <div class="card" style="width: 18rem;">
+                <img src="<%= repository.owner_avatar %>" class="rounded mx-auto d-block" width="150" height="150">
+                <div class="card-body">
+                  <h3><%= repository.name %></h3>
+                  <h6><%= link_to repository.html_url, repository.html_url, :target => "_blank" %></h6>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <%= paginate @repositories %>
+    <% end %>
+  </div>
+</div>
