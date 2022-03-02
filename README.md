@@ -9,4 +9,5 @@ Things you may want to cover:
 
 * Run bundle
 
+* Node version I used: 12.9.0
 * ...
